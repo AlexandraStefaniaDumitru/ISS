@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libraryapp.BibliotecarView">
+   <children>
+      <TableView fx:id="availableBookTableView" layoutX="48.0" layoutY="140.0" prefHeight="534.0" prefWidth="361.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <TableView fx:id="borrowedBooksTableView" layoutX="460.0" layoutY="140.0" prefHeight="534.0" prefWidth="361.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <TextField fx:id="titleTextField" layoutX="1019.0" layoutY="192.0" />
+      <TextField fx:id="authorTextField" layoutX="1019.0" layoutY="236.0" />
+      <TextField fx:id="yearTextField" layoutX="1019.0" layoutY="276.0" />
+      <Button fx:id="addButton" layoutX="998.0" layoutY="365.0" mnemonicParsing="false" text="Add" />
+      <Button fx:id="deleteButton" layoutX="1054.0" layoutY="365.0" mnemonicParsing="false" text="Delete" />
+      <Button fx:id="updateButton" layoutX="1120.0" layoutY="365.0" mnemonicParsing="false" text="Update" />
+      <TextField fx:id="isbnReturnTextField" layoutX="1019.0" layoutY="487.0" />
+      <TextField fx:id="usernameReturnTextField" layoutX="1019.0" layoutY="527.0" />
+      <Button fx:id="returnButton" layoutX="1125.0" layoutY="572.0" mnemonicParsing="false" text="Return" />
+      <Button fx:id="registerButton" layoutX="1084.0" layoutY="649.0" mnemonicParsing="false" text="Register here!" />
+      <Label layoutX="48.0" layoutY="101.0" text="Available books">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="460.0" layoutY="101.0" text="Borrowed books">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Text layoutX="593.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi, librarian!">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Label layoutX="982.0" layoutY="491.0" text="ISBN" />
+      <Label layoutX="907.0" layoutY="531.0" text="Reader Username" />
+      <Text layoutX="1058.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Return a book">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Label layoutX="979.0" layoutY="147.0" text="ISBN" />
+      <Label layoutX="979.0" layoutY="196.0" text="Title" />
+      <Label layoutX="971.0" layoutY="240.0" text="Author" />
+      <Label layoutX="918.0" layoutY="280.0" text="Publication Year" />
+      <Label layoutX="973.0" layoutY="323.0" text="Status" />
+      <TextField fx:id="isbnTextField" layoutX="1019.0" layoutY="143.0" />
+      <Text layoutX="1051.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage books">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="984.0" layoutY="668.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New reader?">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="statusComboBox" layoutX="1019.0" layoutY="319.0" prefHeight="27.0" prefWidth="162.0" />
+   </children>
+</AnchorPane>
