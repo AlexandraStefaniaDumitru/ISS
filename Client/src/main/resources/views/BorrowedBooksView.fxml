@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="487.0" prefWidth="716.0" style="-fx-background-color: #faf2f7;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorrowedBooksController">
+   <children>
+      <Label layoutX="304.0" layoutY="22.0" prefHeight="55.0" prefWidth="109.0" text="Sonet" textFill="#cf0aaf">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+      <TableView fx:id="borrowedBooksTableView" layoutX="43.0" layoutY="120.0" prefHeight="304.0" prefWidth="612.0">
+         <columns>
+            <TableColumn prefWidth="55.0" text="ISBN">
+               <cellValueFactory><PropertyValueFactory property="ISBN" /> </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="206.0" text="Title">
+               <cellValueFactory><PropertyValueFactory property="title" /> </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="137.0" text="Author">
+               <cellValueFactory><PropertyValueFactory property="author" /> </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="110.0" text="Publication Year">
+               <cellValueFactory><PropertyValueFactory property="publicationYear" /> </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="103.0" text="Library">
+               <cellValueFactory><PropertyValueFactory property="library" /> </cellValueFactory>
+            </TableColumn>
+         </columns>
+      </TableView>
+      <Label layoutX="287.0" layoutY="77.0" text="Your borrowed books">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

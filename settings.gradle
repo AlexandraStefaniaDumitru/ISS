@@ -1,0 +1,8 @@
+rootProject.name = 'Library2'
+include 'Client'
+include 'Model'
+include 'Persistence'
+include 'Server'
+include 'Services'
+include 'Domain'
+

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="domain.Reader" table="READERS">
+        <id name="ID" type="java.lang.Integer">
+            <column name="READER_ID" />
+            <generator class="increment" />
+        </id>
+
+        <property name="name" type="java.lang.String" column="READER_NAME" />
+        <property name="username" type="java.lang.String" column="READER_USERNAME" />
+        <property name="password" type="java.lang.String" column="READER_PASSWORD" />
+        <property name="CNP" type="java.lang.String" column="READER_CNP" />
+        <property name="address" type="java.lang.String" column="READER_ADDRESS" />
+        <property name="phoneNumber" type="java.lang.String" column="READER_PHONE_NUMBER" />
+        <set name="books" table="READERS_BOOKS" inverse="false" cascade="save-update" lazy="false" fetch="select">
+            <key>
+                <column name="READER_ID" not-null="true" />
+            </key>
+            <many-to-many entity-name="domain.Book">
+                <column name="BOOK_ID" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

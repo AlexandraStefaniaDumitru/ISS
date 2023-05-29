@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="566.0" prefWidth="870.0" style="-fx-background-color: #faf2f7;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageBooksController">
+   <children>
+      <Label layoutX="369.0" layoutY="25.0" prefHeight="55.0" prefWidth="114.0" text="Sonet" textFill="#cf0aaf">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableViewBorrowedBooks" layoutX="55.0" layoutY="104.0" prefHeight="304.0" prefWidth="758.0">
+         <columns>
+            <TableColumn prefWidth="66.0" text="ISBN">
+               <cellValueFactory><PropertyValueFactory property="ISBN" /> </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="224.0" text="Title">
+               <cellValueFactory><PropertyValueFactory property="title" /> </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="196.0" text="Author">
+               <cellValueFactory><PropertyValueFactory property="author" /> </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="123.0" text="Publication Year">
+               <cellValueFactory><PropertyValueFactory property="publicationYear" /> </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="76.0" text="Library">
+               <cellValueFactory><PropertyValueFactory property="library" /> </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="72.0" text="Available">
+               <cellValueFactory><PropertyValueFactory property="isAvailable" /> </cellValueFactory>
+            </TableColumn>
+         </columns>
+      </TableView>
+      <Button fx:id="removeButton" layoutX="377.0" layoutY="515.0" mnemonicParsing="false" onAction="#removeBook" prefHeight="26.0" prefWidth="99.0" text="Remove Book" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="titleTF" layoutX="100.0" layoutY="430.0" />
+      <Label layoutX="55.0" layoutY="432.0" text="Title:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="authorTF" layoutX="345.0" layoutY="430.0" />
+      <Label layoutX="282.0" layoutY="431.0" text="Author:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="publicationYearTF" layoutX="651.0" layoutY="429.0" />
+      <Label layoutX="520.0" layoutY="431.0" text="Publication Year:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonAddBook" layoutX="377.0" layoutY="476.0" mnemonicParsing="false" onMouseClicked="#addBook" prefHeight="26.0" prefWidth="99.0" text="Add new Book" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

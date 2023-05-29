@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="domain.Book" table="BOOKS">
+        <id name="ISBN" type="java.lang.Integer">
+            <column name="BOOK_ID" />
+            <generator class="increment" />
+        </id>
+        <property name="title" type="java.lang.String" column="BOOK_TITLE" />
+        <property name="author" type="java.lang.String" column="BOOK_AUTHOR" />
+        <property name="publicationYear" type="java.lang.Integer" column="BOOK_PUBLICATION_YEAR" />
+        <property name="isAvailable" type="java.lang.Boolean" column="BOOK_IS_AVAILABLE" />
+        <set name="readers" table="READERS_BOOKS" inverse="false" cascade="save-update" lazy="false" fetch="select">
+            <key>
+                <column name="BOOK_ID" not-null="true" />
+            </key>
+            <many-to-many entity-name="domain.Reader">
+                <column name="READER_ID" not-null="true" />
+            </many-to-many>
+        </set>
+        <many-to-one name="library" class="domain.Library" fetch="select">
+            <column name="LIBRARY_ID" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
